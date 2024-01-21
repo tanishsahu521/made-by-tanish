@@ -162,6 +162,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Derivative Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #inputExpression {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #calculateButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Advanced Derivative Calculator</h2>
+
+    <input type="text" id="inputExpression" placeholder="Enter a mathematical expression">
+    <button id="calculateButton" onclick="calculateDerivative()">Calculate Derivative</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateDerivative() {
+            const inputExpression = document.getElementById('inputExpression').value;
+            const resultDiv = document.getElementById('result');
+
+            try {
+                const derivative = math.derivative(inputExpression, 'x').toString();
+                resultDiv.innerHTML = `<p>The derivative is: ${derivative}</p>`;
+            } catch (error) {
+                resultDiv.innerHTML = '<p>Invalid expression. Please enter a valid mathematical expression.</p>';
+            }
+        }
+    </script>
+
+    <!-- Include Math.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.6.0/math.min.js"></script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Integral Calculator</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.10.0/math.min.js"></script>
     <style>
